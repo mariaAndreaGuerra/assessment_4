@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ playlist.name }}</title>
+</head>
+<body>
+    <h1>{{ playlist.name }}</h1>
+    <ul>
+        {% for song in playlist.songs %}
+            <li>{{ song.title }} - {{ song.artist }}</li>
+        {% endfor %}
+    </ul>
+    <form method="post">
+        {{ form.csrf_token }}
+        {{ form.title.label }} {{ form.title(size=20) }}<br>
+        {{ form.artist.label }} {{ form.artist(size=20) }}<br>
+        <input type="submit" value="Add Song">
+    </form>
+</body>
+</html>

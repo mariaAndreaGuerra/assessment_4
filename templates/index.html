@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment 4 - Database DJ</title>
+</head>
+<body>
+    <h1>Playlists</h1>
+    <ul>
+        {% for playlist in playlists %}
+            <li><a href="{{ url_for('playlist', playlist_id=playlist.id) }}">{{ playlist.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('create_playlist') }}">Create Playlist</a>
+</body>
+</html>
